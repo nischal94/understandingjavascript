@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+    var myObject, myArray;
+    function myFunction(a, b) {
+        return a * b;
+    }
+    myArray = [10, 2]
+    myObject = myFunction.apply(myObject, myArray);// Will return 20
+    document.getElementById("demo").innerHTML = myObject;
+</script>
+
+</body>
+</html>
+<!--<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+    var myObject;
+    function myFunction(a, b) {
+        return a * b;
+    }
+    myObject = myFunction.call(myObject, 10, 2);    // Will return 20
+    document.getElementById("demo").innerHTML = myObject;
+</script>
+
+</body>
+</html>-->
+
+

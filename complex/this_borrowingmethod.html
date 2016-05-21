@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        var gameController = {
+            scores  :[20, 34, 55, 46, 77],
+            avgScore:null,
+            players :[
+                {name:"Tomy", playerID:987, age:23},
+                {name:"Pau", playerID:87, age:33}
+            ]
+        }
+
+        var appController = {
+            scores  :[900, 845, 809, 950],
+            avgScore:null,
+            avg     :function () {
+
+                var sumOfScores = this.scores.reduce (function (prev, cur, index, array) {
+                    return prev + cur;
+                });
+
+                this.avgScore = sumOfScores / this.scores.length;
+            }
+        }
+
+        //If we run the code below,
+        // the gameController.avgScore property will be set to the average score from the appController object scores array
+        // The avg method "this" keyword will not refer to the gameController object, it will refer to the appController object because it is being invoked on appController
+        // Don't run this code, we want the appController.avgScore to remain null
+
+        appController.avg.apply (gameController, gameController.scores);
+
+        // The avgScore property was successfully set on the gameController object, even though we borrowed the avg () method from the appController object
+        console.log (gameController.avgScore); // 46.4
+
+        console.log (appController.avgScore);
+    </script>
+    <meta charset=utf-8 />
+    <title>JS Bin</title>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<body>
+<script>
+    var a = prompt("enter values");
+    var numbers = a.split(',');
+   numbers.forEach( function(elem, idx, arr) {
+        arr[idx] = elem * elem;
+    });
+    alert(numbers); // This shows [1,4,9,16,25];
+
+    //map-store result of function in array
+    var square = function(el) { return el * el; }
+    var num = [1, 2, 3, 4, 5];
+    var results = num.map(square);
+    alert(results);
+
+</script>
+</body>
+</html>

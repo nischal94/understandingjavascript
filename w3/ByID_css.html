@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1> what can JS do?</h1>
+<p id = "demo">JS can change style of HTML element</p>
+<button type = "button" onclick ="myFunction()">
+    Click me!</button>
+
+<script>
+function myFunction() {
+var x = document.getElementById("demo");
+    x.style.fontSize = "25px";
+    x.style.color = "red";
+
+var y = document.getElementsByTagName("h1")[0];
+    y.style.color = "yellow";
+
+}
+</script>
+</body>
+</html>

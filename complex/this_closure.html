@@ -1,0 +1,54 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js">
+    </script>
+
+    <script>
+        var user = {
+            tournament: "the masters",
+            data: [
+                {name: "woods", age: 37},
+                {name: "mickelson", age: 43}
+            ],
+
+            clickHandler: function (event) {
+                // To capture the value of "this"
+                // when it refers to the user object,
+                // we have to set it to another variable here:
+                // We set the value of "this" to theUserObj variable,
+                // so we can use it later
+                var theUserObj = this;
+                this.data.forEach(function (person) {
+                    // Instead of using this.tournament, we now use theUserObj.tournament,
+                    // because we explicitly set the value of theUserObj
+                    // to "this" when the "this" value was referring to the user object
+
+                    console.log (person.name + " is playing at " + theUserObj.tournament);
+                })
+            }
+        }
+
+        user.clickHandler();
+        </script>
+<meta charset="utf-8" />
+    <title>This Closure</title>
+    </head>
+ <body>
+ </body>
+
+</html>
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+</head>
+</html>

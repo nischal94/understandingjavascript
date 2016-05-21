@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <meta charset=utf-8 />
+    <title>JS Bin</title>
+</head>
+<body>
+<button class="buttonError">Show Golfer: Non-Bind Example</button>
+<button class="buttonGood">Show Golfer: Bind Example</button>
+<script>
+    var user = {
+        data        :[
+            {name:"T. Woods", age:37},
+            {name:"P. Mickelson", age:43}
+        ],
+        clickHandler:function (event) {
+            var randomNum = ((Math.random () * 2 | 0) + 1) - 1; // random number between 0 and 1
+
+            // This line is printing a random person's name and age from the data array
+            console.log (this.data[randomNum].name + " " + this.data[randomNum].age);
+        }
+
+    }
+
+    // Pass the user object's clickHandler method as a callback to the button's click method
+    // The button is wrapped inside a jQuery $ wrapper, so it is now a jQuery object
+    // And the output will be undefined
+    $ (".buttonError").click (user.clickHandler); // undefined
+
+    $ (".buttonGood").click (user.clickHandler.bind (user));
+</script>
+
+</body>
+</html>
